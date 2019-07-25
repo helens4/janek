@@ -1,0 +1,116 @@
+.order main {
+    display: flex;
+}
+
+.order .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+
+    font-family: arial;
+}
+
+.order .left div,
+.order .left input {
+    background: rgb(41, 31, 31);
+    margin: 15px;
+    width: 80%;
+    text-align: center;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.order .left input::placeholder {
+    color: white;
+    font-size: 15px
+}
+
+.order .left h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.order .left input {
+    border: none;
+
+}
+
+.order .left div button {
+
+    background: rgb(151, 139, 70);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    height: 25px;
+    width: 100px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.order .left div input {
+    display: none;
+}
+
+.order .left div p {
+    width: 400px;
+}
+
+.order .right {
+    width: 50%;
+    margin-top: 2%;
+}
+
+.order .right .order-data {
+    opacity: 1;
+    width: 90%;
+    height: 75vh;
+    text-align: center;
+    font-family: arial;
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+.order-data div {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+
+}
+
+.order-data .order-price {
+    display: block;
+    font-size: 40px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.order-data button {
+    width: 70%;
+    color: white;
+    background: red;
+    border-radius: 10px;
+    line-height: 50px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}

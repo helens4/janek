@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Login from "./components/login";
+import Order from "./components/order";
+import { Redirect, Route, BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    logged: false
+  };
+
+  loginStateHandler = (login, password) => {
+    if (login === "r" && password === "r") {
+      this.setState({
+        logged: true
+      });
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="app">
+          <header className="app-header">
+            <img className="icon" src="icons/book.png" />
+            <div> Xprint </div>
+          </header>
+          <main>
+            {this.state.logged ? (
+              <div>
+                <BrowserRouter>
+                  <Route path="/order" component={Order} />
+
+                  <div>
+                    <Redirect to="/order" />
+                  </div>
+                </BrowserRouter>
+              </div>
+            ) : (
+              <Login loginState={this.loginStateHandler} />
+            )}
+          </main>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
